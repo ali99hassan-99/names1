@@ -1,0 +1,216 @@
+/* استيراد الخطوط */
+@font-face {
+    font-family: 'bein-ar-black';
+    src: url('fonts/bein-ar-black_0 (1).ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'timesbd';
+    src: url('fonts/timesbd_1.ttf') format('truetype');
+}
+
+/* ضبط الاتجاه للكتابة من اليمين إلى اليسار */
+body {
+    font-family: 'bein-ar-black', Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center; /* توسيط العناصر أفقيًا */
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* تنسيق العنوان */
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* تنسيق مستطيل البحث */
+#searchBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* جعل العرض 80% ليكون مناسباً أكثر */
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق حقل البحث */
+#searchInput {
+    padding: 8px;
+    width: 75%; /* جعل العرض 75% لحقل البحث */
+    font-size: 14px;
+    text-align: right;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    height: 40px;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #4CAF50;
+}
+
+/* تنسيق الأزرار */
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 40px;
+    width: 20%; /* جعل عرض الزر 20% */
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* زر البحث */
+button:nth-of-type(1) {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:nth-of-type(1):hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:nth-of-type(1):active {
+    transform: scale(0.98);
+}
+
+/* زر التحديث */
+button:nth-of-type(2) {
+    background-color: #FF6347;
+    color: white;
+}
+
+button:nth-of-type(2):hover {
+    background-color: #e5533f;
+    transform: scale(1.05);
+}
+
+button:nth-of-type(2):active {
+    transform: scale(0.98);
+}
+
+/* تكبير عرض الجدول ليطابق عرض مستطيل البحث */
+table {
+    width: 80%; /* جعل عرض الجدول 80% ليطابق مستطيل البحث */
+    margin-top: 10px; /* تقليل المسافة بين مستطيل البحث والجدول */
+    margin-bottom: 20px; /* تقليل المسافة السفلية للجدول */
+    border-collapse: collapse;
+    font-family: 'timesbd', Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px; /* زيادة التباعد داخل الخلايا */
+    font-size: 16px; /* تكبير حجم النص */
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word; /* جعل النصوص تنكسر بشكل مناسب */
+    min-width: 150px; /* إضافة حد أدنى لعرض الأعمدة لتجنب تقليص حجم الجدول */
+}
+
+/* إضافة التعديل لتثبيت الصف الأول (العناوين) */
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: sticky;
+    top: 0; /* جعل العنوان ثابتًا في الجزء العلوي عند التمرير */
+    z-index: 1; /* لضمان بقاء العنوان في المقدمة عند التمرير */
+    border-bottom: 2px solid #4CAF50; /* إضافة حد أسفل العناوين */
+}
+
+td {
+    background-color: #fff;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+td:hover {
+    background-color: #e2f7e2;
+    font-size: 17px;
+    transform: scale(1.05);
+    transition: transform 0.2s, font-size 0.2s, background-color 0.3s;
+}
+
+tr:first-child th {
+    border-top: 2px solid #4CAF50;
+}
+
+tr:last-child td {
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* تنسيق الـ Footer */
+.contact-footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.contact-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.contact-footer ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-footer ul li a:hover {
+    color: #4CAF50;
+}
+
+/* جعل المكونات أكثر تنسيقًا على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    #searchBox {
+        width: 80%;
+    }
+
+    table {
+        width: 80%;
+    }
+
+    button {
+        width: 40%;
+    }
+
+    #searchInput {
+        width: 60%;
+    }
+}
