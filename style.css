@@ -199,11 +199,11 @@ tr:last-child td {
 /* جعل المكونات أكثر تنسيقًا على الشاشات الصغيرة */
 @media (max-width: 768px) {
     #searchBox {
-        width: 80%;
+        width: 60%;
     }
 
     table {
-        width: 80%;
+        width: 60%;
     }
 
     button {
@@ -211,6 +211,6 @@ tr:last-child td {
     }
 
     #searchInput {
-        width: 60%;
+        width: 40%;
     }
 }
