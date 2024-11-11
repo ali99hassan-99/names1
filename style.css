@@ -20,7 +20,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
 }
 
@@ -44,7 +43,7 @@ h1 {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* للسماح للعناصر بالانتقال للأسفل عند الحاجة */
+    flex-wrap: wrap;
 }
 
 /* تنسيق حقل البحث */
@@ -77,7 +76,6 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* زر البحث */
 button:nth-of-type(1) {
     background-color: #4CAF50;
     color: white;
@@ -92,7 +90,6 @@ button:nth-of-type(1):active {
     transform: scale(0.98);
 }
 
-/* زر التحديث */
 button:nth-of-type(2) {
     background-color: #FF6347;
     color: white;
@@ -107,9 +104,9 @@ button:nth-of-type(2):active {
     transform: scale(0.98);
 }
 
-/* تكبير عرض الجدول ليطابق عرض مستطيل البحث */
+/* تنسيق الجدول */
 table {
-    width: 100%; /* جعل عرض الجدول 100% للشاشات الصغيرة */
+    width: 50%; /* جعل عرض الجدول أصغر */
     margin-top: 10px;
     margin-bottom: 20px;
     border-collapse: collapse;
@@ -118,22 +115,24 @@ table {
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
+    max-height: 70vh; /* تقييد ارتفاع الجدول */
+    overflow-y: auto; /* إضافة شريط تمرير عمودي */
 }
 
 th, td {
-    padding: 12px;
-    font-size: 16px;
+    padding: 8px; /* تقليل التباعد داخل الخلايا */
+    font-size: 14px; /* تصغير حجم النص */
     text-align: center;
     vertical-align: middle;
     word-wrap: break-word;
-    min-width: 150px;
+    min-width: 100px; /* تصغير عرض الأعمدة */
 }
 
 /* تثبيت الصف الأول */
 th {
     background-color: #4CAF50;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     position: sticky;
     top: 0;
@@ -143,7 +142,7 @@ th {
 
 td {
     background-color: #fff;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -157,20 +156,10 @@ tr:hover {
 
 td:hover {
     background-color: #e2f7e2;
-    font-size: 17px;
     transform: scale(1.05);
-    transition: transform 0.2s, font-size 0.2s, background-color 0.3s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
-tr:first-child th {
-    border-top: 2px solid #4CAF50;
-}
-
-tr:last-child td {
-    border-bottom: 2px solid #4CAF50;
-}
-
-/* تنسيق الـ Footer */
 .contact-footer {
     background-color: #f1f1f1;
     padding: 20px;
@@ -201,12 +190,12 @@ tr:last-child td {
 /* جعل المكونات أكثر تنسيقًا على الشاشات الصغيرة */
 @media (max-width: 768px) {
     #searchBox, table {
-        width: 100%; /* جعل العرض 100% على الشاشات الصغيرة */
+        width: 100%;
     }
 
     button, #searchInput {
-        width: 100%; /* توسيع الأزرار والحقل بعرض كامل */
-        margin: 5px 0; /* مسافة بين العناصر */
+        width: 100%;
+        margin: 5px 0;
     }
     
     h1 {
