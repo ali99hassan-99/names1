@@ -43,7 +43,7 @@ async function searchExcel() {
 
     const result = [];
     window.excelData.forEach((row, index) => {
-        if (index !== 0 && row[0] && row[0].toString().toLowerCase().includes(searchValue)) {
+        if (index !== 0 && row.some(cell => cell.toString().toLowerCase().includes(searchValue))) {
             result.push(row);
         }
     });
