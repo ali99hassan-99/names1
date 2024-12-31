@@ -1,6 +1,6 @@
 async function loadExcel() {
     // تحميل ملف Excel من Google Sheets بصيغة xlsx
-    const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT-j1NDmCSnZ7yLij_Xr3xE4Pnh7L1aStzCdpVqVb2Avv1l6VnjrkX0dIEm89a4_Nj2DDBU30S5Elta/pub?output=xlsx");
+    const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vToQdgEc8ZDGM9r3DJ0xPA9Zxr7lLpn_1OlsAcAgha94rErmQ7YxS2rPNmOAcsBIA/pub?output=xlsx");
     const data = await response.arrayBuffer();
     const workbook = XLSX.read(data, { type: "array" });
     const sheetName = workbook.SheetNames[0];
